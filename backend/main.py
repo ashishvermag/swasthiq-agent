@@ -24,9 +24,9 @@ from tools import (
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"], # Vite's default ports
+    allow_origins=["*"],  # Allows all domains to access your API
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["*"],  # Allows POST, GET, OPTIONS, etc.
     allow_headers=["*"],
 )
 client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
