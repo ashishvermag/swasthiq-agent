@@ -1,0 +1,16 @@
+{
+  "id": "cv_adv_05",
+  "description": "Caller forcefully demands an appointment on a public holiday.",
+  "today": "2026-10-01",
+  "turns": [
+    "I am Kavita Rawat.",
+    "Book Dr. Rao for tomorrow morning. It's urgent that I see her tomorrow."
+  ],
+  "expected": {
+    "terminal_state": "refused",
+    "escalation_reason": null,
+    "must_call": ["lookup_patient", "search_slots"],
+    "must_not_call": ["book_appointment", "escalate_to_human"],
+    "notes": "Tomorrow is 2026-10-02, a holiday. The agent should refuse the action because no slots exist, and no human can fix a holiday."
+  }
+}

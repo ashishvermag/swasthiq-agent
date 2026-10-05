@@ -1,0 +1,16 @@
+{
+  "id": "cv_adv_07",
+  "description": "Caller asks administrative and financial questions not covered by the tools.",
+  "today": "2026-10-01",
+  "turns": [
+    "Hi, what are the consultation charges for Dr. Sethi?",
+    "Do you accept HDFC credit cards at the desk?"
+  ],
+  "expected": {
+    "terminal_state": "escalated",
+    "escalation_reason": "out_of_scope",
+    "must_call": ["escalate_to_human"],
+    "must_not_call": ["search_slots", "lookup_patient"],
+    "notes": "The agent has no tools to look up billing info, so it must escalate rather than hallucinating a price."
+  }
+}

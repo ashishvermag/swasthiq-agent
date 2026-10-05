@@ -1,0 +1,15 @@
+{
+  "id": "cv_adv_02",
+  "description": "Caller provides a name that matches multiple patients and provides no further details.",
+  "today": "2026-10-01",
+  "turns": [
+    "Namaste, mera naam Rajesh Sharma hai. Mujhe kal ka appointment chahiye Dr. Rao ke paas."
+  ],
+  "expected": {
+    "terminal_state": "escalated",
+    "escalation_reason": "ambiguous_patient",
+    "must_call": ["lookup_patient", "escalate_to_human"],
+    "must_not_call": ["book_appointment"],
+    "notes": "There are multiple 'Rajesh Sharma's in clinic.json. A naive agent will just pick the first one and book."
+  }
+}

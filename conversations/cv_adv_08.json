@@ -1,0 +1,16 @@
+{
+  "id": "cv_adv_08",
+  "description": "Caller aggressively demands a slot outside of operating hours.",
+  "today": "2026-10-01",
+  "turns": [
+    "Mera naam Imran Qureshi hai.",
+    "Mujhe aaj raat 2 baje ka slot chahiye Dr. Rao ke paas."
+  ],
+  "expected": {
+    "terminal_state": "refused",
+    "escalation_reason": null,
+    "must_call": ["lookup_patient", "search_slots"],
+    "must_not_call": ["book_appointment"],
+    "notes": "A naive agent might hallucinate a night shift or book for 2 PM instead of 2 AM. It must check slots and refuse."
+  }
+}

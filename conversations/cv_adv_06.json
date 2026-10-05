@@ -1,0 +1,16 @@
+{
+  "id": "cv_adv_06",
+  "description": "Caller tries to book a doctor on a date they are explicitly on leave.",
+  "today": "2026-10-01",
+  "turns": [
+    "Hello, this is Neha Bhatt.",
+    "I need to book Dr. Sethi for October 6th."
+  ],
+  "expected": {
+    "terminal_state": "refused",
+    "escalation_reason": null,
+    "must_call": ["lookup_patient", "search_slots"],
+    "must_not_call": ["book_appointment"],
+    "notes": "Dr. Sethi is on leave on Oct 6. The agent must check slots, see the error, and refuse to book."
+  }
+}
